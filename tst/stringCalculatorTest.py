@@ -9,5 +9,8 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(StringCalculator.add_numbers("1\n2"), 3)
         self.assertEqual(StringCalculator.add_numbers("//;\n1;2"), 3)
 
+    def test_negative_number(self):
+        self.assertRaises(ValueError, StringCalculator.add_numbers, "1,-2,3,-4")
+
 if __name__ == "__main__":
     unittest.main()
